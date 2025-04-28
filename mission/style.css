@@ -2,6 +2,12 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 450;
 }
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
 #container{
     border: 2px solid gray;
     width: 600px;
@@ -65,4 +71,9 @@ img {
     0% { transform: rotate(0deg) scale(1); }
     50% { transform: rotate(180deg) scale(2); }
     100% { transform: rotate(360deg) scale(1); }
+}
+
+#light_dark {
+    margin-left: auto;
+    margin-right: auto;
 }

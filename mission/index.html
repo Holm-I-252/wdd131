@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission Statement</title>
     <link rel="stylesheet" href="style.css">
+    <script src="mission.js" defer></script>
 </head>
 <body>
     <div id="container">
@@ -25,49 +26,13 @@
             </ol>
         </div>
         <img src="byui-logo_blue.webp" alt="BYU-Idaho Logo" id="logo">
-        <button id="btn">Click Here To Change Color</button>
     </div>
 
-    <script>
-        let btn = document.getElementById("btn") 
-        let par_one = document.getElementById("par_one")
-        let par_two = document.getElementById("par_two")
-        let list = document.getElementById("list")
-        let logo = document.getElementById("logo")
-        let container = document.getElementById("container")
-        let title = document.getElementById("title")
+    <select id="light_dark">
+        <option value="light">Light Mode</option>
+        <option value="dark">Dark Mode</option>
+    </select>
 
-        let toggle = false
-        let toggle2 = false
-
-
-        btn.addEventListener("click", () => {
-
-            if (toggle == false){
-                par_one.style.color = "#006EB6"
-                par_two.style.color = "#006EB6"
-                list.style.color = "#006EB6"
-                title.style.color = "#006EB6"  
-                container.style.backgroundColor = "black"
-                toggle = true
-            }
-            else if (toggle == true){
-                par_one.style.color = "black"
-                par_two.style.color = "black"
-                list.style.color = "black"  
-                title.style.color = "black"
-                container.style.backgroundColor = "white"
-                toggle = false
-            }
-        })
-
-        logo.addEventListener("mouseenter", () => {
-            logo.style.animation = "spin 2s linear infinite"
-        })
-        logo.addEventListener("mouseleave", () => {
-            logo.style.animation = "none"
-        })
-    </script>
     
 </body>
 </html>
