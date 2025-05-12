@@ -41,6 +41,7 @@ function viewHandler(e){
     let split_src = pic.src.split("-");
     split_src[1] = "full.jpeg";
     let full_src = split_src.join("-");
+    console.log(full_src);
     document.body.insertAdjacentHTML("afterbegin", viewerTemplate(full_src, pic.alt));
     document.querySelector(".close-viewer").addEventListener("click", () => {
         document.querySelector(".viewer").remove();
