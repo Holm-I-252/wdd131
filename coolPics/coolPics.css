@@ -87,6 +87,36 @@ figure {
     width: 90%;
 }
 
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    z-index: 1000;
+}
+
+#viewer-img {
+    max-height: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.close-viewer {
+    background-color: white;
+    cursor: pointer;
+    width: 3%;
+    height: 3%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
 @media screen and (min-width: 500px) {
     .gallary {
         grid-template-columns: 1fr 1fr;
