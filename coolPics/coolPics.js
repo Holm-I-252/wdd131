@@ -39,10 +39,11 @@ function viewerTemplate(pic, alt) {
 function viewHandler(e){
     let pic = e.target;
     let split_src = pic.src.split("-");
+    console.log(split_src);
     split_src[1] = "full.jpeg";
     let full_src = split_src.join("-");
     console.log(full_src);
-    document.body.insertAdjacentHTML("afterbegin", viewerTemplate(full_src, pic.alt));
+    document.body.insertAdjacentHTML("beforeend", viewerTemplate(full_src, pic.alt));
     document.querySelector(".close-viewer").addEventListener("click", () => {
         document.querySelector(".viewer").remove();
     });
