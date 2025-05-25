@@ -1,0 +1,58 @@
+* {
+    color: #473144;
+}
+.nav_link, .book_title {
+    color: #AF1B3F;
+}
+
+#title {
+    text-align: center;
+    margin-top: 20px;;
+}
+
+#nav_menu {
+    border-top: 2px solid #EFC69B;
+    border-bottom: 2px solid #EFC69B;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav_link {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+article.book {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#filters {
+    width: 40%;
+}
+
+.book_title{
+    text-align: center;
+}
+
+#bookCover {
+    max-width: 60%;
+}
+
+#bookCover img {
+    margin-left: 30%;
+    max-width: 40%;
+}
+
+.read_more_link {
+    color: #AF1B3F;
+}
