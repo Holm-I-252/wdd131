@@ -56,3 +56,7 @@ article.book {
 .read_more_link {
     color: #AF1B3F;
 }
+
+#filters {
+    border: #EFC69B solid 2px;
+}
