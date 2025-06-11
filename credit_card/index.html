@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <script src="card.js" defer></script>
+</head>
+<body>
+    <form id="card">
+        <div id="card_front">
+            <p id="total"></p>
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" placeholder="Enter 16 digits" pattern="[0-9]{16}" required>
+            <label for="card_name">Name on Card:</label>
+            <input type="text" id="card_name" name="card_name" placeholder="Enter name" required>
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="text" id="expiry_month" name="expiry_date" placeholder="MM" required>
+            <input type="text" id="expiry_year" name="expiry_date" placeholder="YY" required>
+        </div>
+        <div id="card_back">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter 3 digits" pattern="[0-9]{3}" required>
+            <button type="submit">Pay</button>
+        </div>
+    </form>
+</body>
+</html>
