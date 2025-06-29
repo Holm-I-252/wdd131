@@ -94,6 +94,11 @@ header h1 {
     justify-content: center;
     border: 2px solid rgb(152, 149, 149);
     padding: 20px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+.recipe-info {
+    width: 40%;
 }
 .recipe-image {
     width: 500px;
@@ -107,6 +112,7 @@ header h1 {
     padding: 5px;
     display: inline-block;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .recipe-title {
@@ -116,8 +122,18 @@ header h1 {
     font-family: var(--secondary-font);
 }
 
+.recipe-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 .rating {
     margin-bottom: 10px;
+}
+
+.raiting-container {
+    margin-bottom: 20px;;
 }
 
 .icon {
@@ -133,9 +149,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-    header {
-        
-    }
 
     header img {
         width: 80px;

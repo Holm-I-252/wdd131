@@ -280,29 +280,92 @@ const recipes = [
 	}
 ]
 
-// let container = document.getElementById('recipe-container')
+function chooseRandomRecipe() {
+	const randomIndex = Math.floor(Math.random() * recipes.length);
+	return recipes[randomIndex];
+}
 
-// recipes.forEach(recipe => {
-//     let recipeCard = document.createElement('div')
-//     recipeCard.className = 'recipe-card'
+function createRecipeTemplate(recipe) {
+	return `<div class="recipe-card">
+                <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+                <div class="recipe-info">
+                    <div id="tags">
 
-//     let recipeImage = document.createElement('img')
-//     recipeImage.src = recipe.image
-//     recipeImage.alt = recipe.name
+                    </div>
+                    <h2 class="recipe-title">${recipe.name}</h2>
+                    <span class="rating-container" role="img" aria-label="">
+                        
+                    </span>
+                    <p class="recipe-description">${recipe.description}</p>
+                </div>
+            </div>`
+}
 
-//     let recipeTitle = document.createElement('h2')
-//     recipeTitle.textContent = recipe.name
+function tagsTemplate(tags) {
+	return tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+}
 
-//     let recipeDescription = document.createElement('p')
-//     recipeDescription.textContent = recipe.description
+function ratingTemplate(rating) {
+	let html = `<span
+	class="rating"
+	role="img"
+	aria-label="Rating: ${rating} out of 5 stars"
+>`;
+	for (let i = 0; i < 5; i++) {
+		if (i < rating) {
+			html += '⭐';
+		}	
+		else {
+			html += '☆';
+		}
+	}
+	html += '</span>';
+	return html;
+}
+
+function searchRecipes(query) {
+	return recipes.filter(recipe => {
+		return recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+			recipe.description.toLowerCase().includes(query.toLowerCase()) ||
+			recipe.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()));
+	});
+}
+
+function displaySearchResults(query) {
+	const results = searchRecipes(query);
+	const resultsContainer = document.getElementById('recipe-container');
+	resultsContainer.innerHTML = '';
+	if (results.length === 0) {
+		resultsContainer.innerHTML = '<p>No recipes found.</p>';
+	} else {
+		results.forEach(recipe => {
+			const recipeCard = document.createElement('div');
+			recipeCard.className = 'recipe-card';
+			recipeCard.innerHTML = `
+				<img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+				<div class="recipe-info">
+					<div id="tags">${tagsTemplate(recipe.tags)}</div>
+					<h2 class="recipe-title">${recipe.name}</h2>
+					<span class="rating">${ratingTemplate(recipe.rating)}</span>
+					<p class="recipe-description">${recipe.description}</p>
+				</div>
+			`;
+			resultsContainer.appendChild(recipeCard);
+		});
+	}
+}
+
+document.getElementById('search').addEventListener('input', function(e) {
+	e.preventDefault();
+	const query = this.value.trim();
+	if (query) {
+		displaySearchResults(query);
+	}
+})
 
 
-//     recipeCard.appendChild(recipeImage)
-//     recipeCard.appendChild(recipeTitle)
-//     recipeCard.appendChild(recipeDescription)
-//     recipeCard.appendChild(recipeAuthor)
-//     recipeCard.appendChild(recipeCookTime)
-//     recipeCard.appendChild(recipePrepTime)
-
-//     container.appendChild(recipeCard)
-// })
+let recipe = chooseRandomRecipe();
+console.log(recipe);
+document.getElementById('recipe-container').innerHTML = createRecipeTemplate(recipe);
+document.getElementById('tags').innerHTML = tagsTemplate(recipe.tags);
+document.querySelector('.rating-container').innerHTML = ratingTemplate(recipe.rating);
