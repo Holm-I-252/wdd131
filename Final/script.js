@@ -68,11 +68,19 @@ function checkAnswer(event) {
     const correctAnswer = document.querySelector(".correct");
     if (selectedAnswer === correctAnswer) {
         HandleCorrectAnswer();
-        nextQuestion();
+        selectedAnswer.style.backgroundColor = "#4CAF50"; // Green for correct answer
+        setTimeout(() => {
+            nextQuestion();
+        }, 1000);
     } else {
-        nextQuestion();
+        selectedAnswer.style.backgroundColor = "#F44336"; // Red for incorrect answer
+        correctAnswer.style.backgroundColor = "#4CAF50"; // Green for correct answer
+        setTimeout(() => {
+            nextQuestion();
+        }, 1000);
     }
 }
+
 
 function HandleCorrectAnswer() {
     answeredCorrect++;

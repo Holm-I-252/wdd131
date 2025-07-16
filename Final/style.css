@@ -24,8 +24,10 @@ body {
 }
 
 h1 {
-    font-family: "Diplomata", "Ubuntu", sans-serif;
-    font-size: 2.5em;
+    font-family: "TikTok Sans", "Ubuntu", sans-serif;
+    font-size: 3.5em;
+    font-weight: 900;
+    color: #334195;;
 }
 
 #header {
@@ -40,10 +42,16 @@ h1 {
     text-decoration: none;
     font-size: 1.2em;
 }
+#header a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+    font-size: 1.3em;
+}
 
 #main-title {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #trivia-container {
@@ -57,6 +65,7 @@ h1 {
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 #question-num {
@@ -84,11 +93,13 @@ h1 {
     padding: 10px;
     font-weight: 900;
     text-align: center;
+    border: 2px solid #334195;
 }
 
 #options-list li:hover {
     font-size: 1.1em;
     cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #quiz-finished {
@@ -115,6 +126,17 @@ h1 {
     filter: brightness(1) blur(0);
   }
 }
-#options-list li {
+#options-list li, #question-text {
   animation: spotlightFadeIn 1.5s ease-out forwards;
+}
+
+#movie-icon {
+    width: 200px;
+}
+#title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
